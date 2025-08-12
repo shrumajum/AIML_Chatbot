@@ -11,7 +11,44 @@
       background: linear-gradient(135deg, #ffe6f0, #fff);
       margin: 0;
       height: 100vh;
-      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #333;
+    }
+
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #e80071;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 10px 0 30px;
+      color: #666;
+    }
+
+    .cta-btn {
+      background-color: #e80071;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #c60060;
     }
 
     /* Floating chat button */
@@ -55,7 +92,6 @@
       z-index: 9998;
     }
 
-    /* Chat header with logo */
     .chat-header {
       background-color: #e80071;
       color: white;
@@ -79,6 +115,11 @@
 </head>
 <body>
 
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Nykaa_Logo.svg/2560px-Nykaa_Logo.svg.png" alt="Nykaa Logo" class="logo">
+  <h1>Your Beauty, Our Passion</h1>
+  <p>Discover beauty tips, offers & more — chat with our virtual assistant.</p>
+  <button class="cta-btn" id="chatOpen">Chat Now</button>
+
   <!-- Floating Chat Button -->
   <div class="chat-btn" id="chatToggle">💬</div>
 
@@ -97,13 +138,17 @@
     ></df-messenger>
   </div>
 
-  <!-- Toggle Script -->
   <script>
     const chatToggle = document.getElementById("chatToggle");
     const chatBox = document.getElementById("chatBox");
+    const chatOpen = document.getElementById("chatOpen");
 
     chatToggle.addEventListener("click", () => {
       chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+    });
+
+    chatOpen.addEventListener("click", () => {
+      chatBox.style.display = "flex";
     });
   </script>
 
