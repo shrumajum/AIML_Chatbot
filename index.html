@@ -9,126 +9,46 @@
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #ffe6f0, #fff);
-      margin: 0;
-      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .chat-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 20px;
       text-align: center;
-      color: #333;
+      width: 350px;
     }
 
     .logo {
-      width: 200px;
+      width: 150px;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #e80071;
       margin-bottom: 20px;
+      font-style: italic;
     }
 
     h1 {
-      font-size: 2.5rem;
       color: #e80071;
-      margin: 0;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin: 10px 0 30px;
-      color: #666;
-    }
-
-    .cta-btn {
-      background-color: #e80071;
-      color: white;
-      padding: 12px 25px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-btn:hover {
-      background-color: #c60060;
-    }
-
-    /* Floating chat button */
-    .chat-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #e80071;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 30px;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      z-index: 9999;
-      transition: transform 0.3s ease;
-    }
-
-    .chat-btn:hover {
-      transform: scale(1.1);
-    }
-
-    /* Chat box */
-    .chat-box {
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      width: 350px;
-      max-width: 90%;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      animation: fadeIn 0.3s ease;
-      z-index: 9998;
-    }
-
-    .chat-header {
-      background-color: #e80071;
-      color: white;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .chat-header img {
-      height: 28px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      font-size: 1.8rem;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-
-  <img src="https://en.m.wikipedia.org/wiki/File:Nykaa_New_Logo.svg" alt="Nykaa Logo" class="logo">
-  <h1>Your Beauty, Our Passion</h1>
-  <p>Discover beauty tips, offers & more — chat with our virtual assistant.</p>
-  <button class="cta-btn" id="chatOpen">Chat Now</button>
-
-  <!-- Floating Chat Button -->
-  <div class="chat-btn" id="chatToggle">💬</div>
-
-  <!-- Chat Box -->
-  <div class="chat-box" id="chatBox">
-    <div class="chat-header">
-      <img src="https://play-lh.googleusercontent.com/Jm1GuT2ILrz8yy7vSvJ7GLTgISaeMCj2iOZcuo-J_EMky2ezamVv8shCnHjaBT9o3KI" alt="Nykaa Logo">
-      Virtual Assistant
-    </div>
+  <div class="chat-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Nykaa_Logo.svg" alt="Nykaa Logo" class="logo">
+    <div class="tagline">Your Beauty, Our Passion</div>
+    <h1>💬 Nykaa Virtual Assistant</h1>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger
       intent="WELCOME"
@@ -137,21 +57,5 @@
       language-code="en"
     ></df-messenger>
   </div>
-
-  <script>
-    const chatToggle = document.getElementById("chatToggle");
-    const chatBox = document.getElementById("chatBox");
-    const chatOpen = document.getElementById("chatOpen");
-
-    chatToggle.addEventListener("click", () => {
-      chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
-    });
-
-    chatOpen.addEventListener("click", () => {
-      chatBox.style.display = "flex";
-    });
-  </script>
-
 </body>
 </html>
-
