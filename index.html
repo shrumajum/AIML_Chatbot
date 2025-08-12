@@ -1,48 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nykaa Chatbot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ffe6f0, #fff);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #fff5f7;
+      color: #333;
+      text-align: center;
       margin: 0;
+      padding: 0;
     }
-
-    h1 {
-      color: #e80071;
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .chat-container {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    header {
+      background-color: #ff4f84;
+      color: white;
       padding: 20px;
-      text-align: center;
-      width: 350px;
+      font-size: 28px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header img {
+      height: 50px;
+      margin-bottom: 10px;
+    }
+    header span {
+      display: block;
+      margin-top: 5px;
+    }
+    .tagline {
+      font-size: 16px;
+      font-style: italic;
+      color: #ffe0eb;
+      margin-top: 5px;
+    }
+    main {
+      padding: 30px;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background-color: #ffe6ee;
+      color: #555;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <div class="chat-container">
-    <h1>💬 Nykaa Virtual Assistant</h1>
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger
-      intent="WELCOME"
-      chat-title="AIML_Nykaa"
-      agent-id="b1b69579-b471-409d-a67d-8c04f43a5249"
-      language-code="en"
-    ></df-messenger>
-  </div>
+
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Nykaa_New_Logo.svg/1200px-Nykaa_New_Logo.svg.png" alt="Nykaa Logo">
+    <span>💄 Nykaa Virtual Assistant</span>
+    <div class="tagline">Your Beauty, Our Passion</div>
+  </header>
+
+  <main>
+    <p>Welcome! I’m here to help you with offers, loyalty programs, and gift cards.</p>
+    <p>Click the chat icon in the bottom right to start talking to me.</p>
+  </main>
+
+  <footer>© 2025 Nykaa Chatbot Project | For Academic Use Only</footer>
+
+  <!-- Dialogflow Chatbot Script -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger
+    intent="WELCOME"
+    chat-title="AIML_Nykaa"
+    agent-id="b1b69579-b471-409d-a67d-8c04f43a5249"
+    language-code="en"
+  ></df-messenger>
+
 </body>
 </html>
