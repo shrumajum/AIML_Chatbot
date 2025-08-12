@@ -1,60 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nykaa Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #fff5f7;
-      color: #333;
-      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #fff);
       margin: 0;
-      padding: 0;
+      height: 100vh;
+      overflow-x: hidden;
     }
-    header {
-      background-color: #ff4f84;
+
+    /* Floating chat button */
+    .chat-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e80071;
       color: white;
-      padding: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 9999;
+      transition: transform 0.3s ease;
     }
-    main {
-      padding: 30px;
+
+    .chat-btn:hover {
+      transform: scale(1.1);
     }
-    p {
+
+    /* Chat box */
+    .chat-box {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 350px;
+      max-width: 90%;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      animation: fadeIn 0.3s ease;
+      z-index: 9998;
+    }
+
+    /* Chat header with logo */
+    .chat-header {
+      background-color: #e80071;
+      color: white;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-size: 18px;
-      color: #555;
+      font-weight: 600;
     }
-    footer {
-      margin-top: 40px;
-      padding: 15px;
-      background-color: #ffe6ee;
-      color: #555;
-      font-size: 14px;
+
+    .chat-header img {
+      height: 28px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <header>💄 Nykaa Virtual Assistant</header>
-  <main>
-    <p>Welcome! I’m here to help you with offers, loyalty programs, and gift cards.</p>
-    <p>Click the chat icon in the bottom right to start talking to me.</p>
-  </main>
+  <!-- Floating Chat Button -->
+  <div class="chat-btn" id="chatToggle">💬</div>
 
-  <footer>© 2025 Nykaa Chatbot Project | For Academic Use Only</footer>
+  <!-- Chat Box -->
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Nykaa_Logo.svg/2560px-Nykaa_Logo.svg.png" alt="Nykaa Logo">
+      Virtual Assistant
+    </div>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="AIML_Nykaa"
+      agent-id="b1b69579-b471-409d-a67d-8c04f43a5249"
+      language-code="en"
+    ></df-messenger>
+  </div>
 
-  <!-- Dialogflow Chatbot Script -->
-  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-  <df-messenger
-    intent="WELCOME"
-    chat-title="AIML_Nykaa"
-    agent-id="b1b69579-b471-409d-a67d-8c04f43a5249"
-    language-code="en"
-  ></df-messenger>
+  <!-- Toggle Script -->
+  <script>
+    const chatToggle = document.getElementById("chatToggle");
+    const chatBox = document.getElementById("chatBox");
+
+    chatToggle.addEventListener("click", () => {
+      chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+    });
+  </script>
 
 </body>
 </html>
