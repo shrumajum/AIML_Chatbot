@@ -1,17 +1,60 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>AIML Nykaa Chatbot</title>
-  </head>
-  <body>
-    <h1>Welcome to Nykaa Chatbot</h1>
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger
-      intent="WELCOME"
-      chat-title="AIML_Nykaa"
-      agent-id="b1b69579-b471-409d-a67d-8c04f43a5249"
-      language-code="en"
-    ></df-messenger>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nykaa Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff5f7;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ff4f84;
+      color: white;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    main {
+      padding: 30px;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background-color: #ffe6ee;
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>💄 Nykaa Virtual Assistant</header>
+  <main>
+    <p>Welcome! I’m here to help you with offers, loyalty programs, and gift cards.</p>
+    <p>Click the chat icon in the bottom right to start talking to me.</p>
+  </main>
+
+  <footer>© 2025 Nykaa Chatbot Project | For Academic Use Only</footer>
+
+  <!-- Dialogflow Chatbot Script -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger
+    intent="WELCOME"
+    chat-title="AIML_Nykaa"
+    agent-id="b1b69579-b471-409d-a67d-8c04f43a5249"
+    language-code="en"
+  ></df-messenger>
+
+</body>
 </html>
