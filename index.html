@@ -7,15 +7,16 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #fff5f7;
+      background: linear-gradient(135deg, #fff5f7, #ffe6ee);
       color: #333;
       text-align: center;
       margin: 0;
       padding: 0;
+      animation: fadeIn 1s ease-in-out;
     }
     header {
-      background-color: #ff4f84;
-      color: white;
+      background-color: #ffffff;
+      color: #ff4f84;
       padding: 20px;
       font-size: 28px;
       font-weight: bold;
@@ -23,19 +24,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      border-bottom: 2px solid #ffe0eb;
     }
     header img {
       height: 50px;
       margin-bottom: 10px;
     }
-    header span {
-      display: block;
-      margin-top: 5px;
-    }
     .tagline {
       font-size: 16px;
       font-style: italic;
-      color: #ffe0eb;
+      color: #ff4f84;
       margin-top: 5px;
     }
     main {
@@ -51,6 +49,11 @@
       background-color: #ffe6ee;
       color: #555;
       font-size: 14px;
+    }
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
